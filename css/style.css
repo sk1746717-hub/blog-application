@@ -1036,3 +1036,934 @@ footer {
     }
 
 }
+/* =====================================================
+   BLOGSPHERE PREMIUM THEME
+   ===================================================== */
+
+:root {
+    --bg-main: #0f172a;
+    --bg-secondary: #111c35;
+    --card-bg: #17223b;
+    --card-hover: #1d2945;
+
+    --primary: #7c3aed;
+    --primary-light: #a78bfa;
+    --secondary: #4f46e5;
+
+    --text-main: #f8fafc;
+    --text-secondary: #aab6cc;
+    --text-muted: #7f8ba3;
+
+    --border: rgba(148, 163, 184, 0.16);
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+body {
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(124, 58, 237, 0.15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at top right,
+            rgba(79, 70, 229, 0.12),
+            transparent 30%
+        ),
+        var(--bg-main);
+
+    color: var(--text-main);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: rgba(15, 23, 42, 0.88);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(15px);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.logo {
+    color: #a78bfa !important;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+.navbar nav a {
+    color: #cbd5e1 !important;
+
+    transition: 0.25s ease;
+}
+
+
+.navbar nav a:hover {
+    color: #a78bfa !important;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2,
+h3 {
+    color: var(--text-main);
+}
+
+
+.dashboard-header h1,
+.create-blog-header h1 {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #a78bfa
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.dashboard-label {
+    color: #a78bfa !important;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(124, 58, 237, 0.2),
+            transparent 45%
+        ),
+        var(--bg-main) !important;
+}
+
+
+.hero h1 {
+    color: #ffffff;
+}
+
+
+.hero p {
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+.auth-btn,
+.publish-btn {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #4f46e5
+    ) !important;
+
+    color: white !important;
+
+    border: none;
+
+    box-shadow:
+        0 8px 25px
+        rgba(124, 58, 237, 0.25);
+
+    transition: 0.25s ease;
+}
+
+
+.btn:hover,
+.auth-btn:hover,
+.publish-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(124, 58, 237, 0.4);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card,
+.blog-card,
+.stat-card,
+.dashboard-blog-card,
+.blog-form,
+.auth-container,
+.login-container,
+.register-container {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 69, 0.95),
+            rgba(23, 34, 59, 0.95)
+        ) !important;
+
+    border: 1px solid var(--border) !important;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.25) !important;
+}
+
+
+.card:hover,
+.blog-card:hover,
+.dashboard-blog-card:hover {
+    background: var(--card-hover) !important;
+
+    transform: translateY(-3px);
+
+    transition: 0.25s ease;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    background: transparent;
+}
+
+
+.dashboard-description {
+    color: var(--text-secondary) !important;
+}
+
+
+.stat-card p {
+    color: var(--text-secondary) !important;
+}
+
+
+.stat-card h2 {
+    color: #ffffff !important;
+}
+
+
+.stat-icon {
+    background: rgba(124, 58, 237, 0.16) !important;
+
+    border: 1px solid
+        rgba(167, 139, 250, 0.15);
+}
+
+
+/* =========================
+   BLOG CARDS
+========================= */
+
+.dashboard-blog-card h3 {
+    color: #f8fafc !important;
+}
+
+
+.dashboard-blog-card p {
+    color: var(--text-secondary) !important;
+}
+
+
+.dashboard-blog-card small {
+    color: var(--text-muted) !important;
+}
+
+
+.category {
+    background: rgba(124, 58, 237, 0.16) !important;
+
+    color: #c4b5fd !important;
+
+    border: 1px solid
+        rgba(167, 139, 250, 0.15);
+}
+
+
+/* =========================
+   CREATE BLOG
+========================= */
+
+.create-blog-page {
+    background: transparent !important;
+}
+
+
+.create-blog-header p:last-child {
+    color: var(--text-secondary) !important;
+}
+
+
+.blog-form label {
+    color: #e2e8f0 !important;
+}
+
+
+.blog-form input,
+.blog-form select,
+.blog-form textarea {
+    background: #0f172a !important;
+
+    color: #f8fafc !important;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.25) !important;
+}
+
+
+.blog-form input::placeholder,
+.blog-form textarea::placeholder {
+    color: #64748b;
+}
+
+
+.blog-form input:focus,
+.blog-form select:focus,
+.blog-form textarea:focus {
+    border-color: #8b5cf6 !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.15) !important;
+}
+
+
+.form-help {
+    color: #7f8ba3 !important;
+}
+
+
+.cancel-btn {
+    background: #1e293b !important;
+
+    color: #cbd5e1 !important;
+
+    border: 1px solid var(--border);
+}
+
+
+.cancel-btn:hover {
+    background: #334155 !important;
+}
+
+
+/* =========================
+   LOGIN / REGISTER
+========================= */
+
+.login-page,
+.register-page {
+    background: transparent !important;
+}
+
+
+.auth-card,
+.login-card,
+.register-card {
+    background:
+        linear-gradient(
+            145deg,
+            #17223b,
+            #111c35
+        ) !important;
+
+    border: 1px solid var(--border) !important;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.3);
+}
+
+
+.auth-card h1,
+.login-card h1,
+.register-card h1 {
+    color: #ffffff !important;
+}
+
+
+.auth-card p,
+.login-card p,
+.register-card p {
+    color: var(--text-secondary);
+}
+
+
+.auth-card label,
+.login-card label,
+.register-card label {
+    color: #e2e8f0 !important;
+}
+
+
+.auth-card input,
+.login-card input,
+.register-card input {
+    background: #0f172a !important;
+
+    color: white !important;
+
+    border-color: rgba(
+        148,
+        163,
+        184,
+        0.25
+    ) !important;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+    color: #a78bfa;
+}
+
+
+a:hover {
+    color: #c4b5fd;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #080f20 !important;
+
+    border-top: 1px solid var(--border);
+
+    color: #94a3b8 !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+
+    .dashboard-header h1,
+    .create-blog-header h1 {
+        font-size: 32px;
+    }
+
+}
+/* =====================================================
+   BLOGSPHERE - UNIFIED HOMEPAGE THEME
+   Apply the same dark theme to EVERY page
+===================================================== */
+
+
+/* =========================
+   GLOBAL PAGE BACKGROUND
+========================= */
+
+html {
+    background: #0f172a;
+}
+
+body {
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(124, 58, 237, 0.18),
+            transparent 40%
+        ),
+        #0f172a !important;
+
+    color: #f8fafc !important;
+}
+
+
+/* =========================
+   ALL MAIN SECTIONS
+========================= */
+
+main,
+.dashboard,
+.create-blog-page,
+.auth-page,
+.login-page,
+.register-page {
+    background: transparent !important;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: #0f172a !important;
+
+    border-bottom: 1px solid
+        rgba(148, 163, 184, 0.16) !important;
+
+    box-shadow: none !important;
+}
+
+.navbar .logo,
+.logo {
+    color: #a78bfa !important;
+}
+
+.navbar nav a {
+    color: #cbd5e1 !important;
+
+    transition: all 0.25s ease;
+}
+
+.navbar nav a:hover {
+    color: #a78bfa !important;
+}
+
+
+/* =========================
+   ALL HEADINGS
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #f8fafc !important;
+}
+
+
+/* =========================
+   SECONDARY TEXT
+========================= */
+
+p,
+small {
+    color: #aab6cc;
+}
+
+
+/* =========================
+   GRADIENT HEADINGS
+========================= */
+
+.dashboard-header h1,
+.create-blog-header h1 {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #a78bfa
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    background: transparent !important;
+}
+
+.dashboard-description {
+    color: #aab6cc !important;
+}
+
+.dashboard-blog-card,
+.stat-card {
+    background:
+        linear-gradient(
+            145deg,
+            #17223b,
+            #111c35
+        ) !important;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.16) !important;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.25) !important;
+}
+
+.dashboard-blog-card:hover {
+    background: #1d2945 !important;
+
+    transform: translateY(-3px);
+
+    transition: 0.25s ease;
+}
+
+.dashboard-blog-card h3 {
+    color: #f8fafc !important;
+}
+
+.dashboard-blog-card p {
+    color: #aab6cc !important;
+}
+
+.dashboard-blog-card small {
+    color: #7f8ba3 !important;
+}
+
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.stat-card p {
+    color: #aab6cc !important;
+}
+
+.stat-card h2 {
+    color: #ffffff !important;
+}
+
+.stat-icon {
+    background: rgba(124, 58, 237, 0.16) !important;
+
+    border: 1px solid
+        rgba(167, 139, 250, 0.18);
+}
+
+
+/* =========================
+   CREATE BLOG
+========================= */
+
+.create-blog-page {
+    background: transparent !important;
+}
+
+.create-blog-header p {
+    color: #aab6cc !important;
+}
+
+.blog-form {
+    background:
+        linear-gradient(
+            145deg,
+            #17223b,
+            #111c35
+        ) !important;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.16) !important;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.3) !important;
+}
+
+.blog-form label {
+    color: #e2e8f0 !important;
+}
+
+.blog-form input,
+.blog-form select,
+.blog-form textarea {
+    background: #0f172a !important;
+
+    color: #f8fafc !important;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.25) !important;
+}
+
+.blog-form input::placeholder,
+.blog-form textarea::placeholder {
+    color: #64748b !important;
+}
+
+.blog-form input:focus,
+.blog-form select:focus,
+.blog-form textarea:focus {
+    border-color: #8b5cf6 !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.15) !important;
+}
+
+.form-help {
+    color: #7f8ba3 !important;
+}
+
+
+/* =========================
+   LOGIN + REGISTER CARDS
+========================= */
+
+.login-container,
+.register-container,
+.auth-container,
+.login-card,
+.register-card,
+.auth-card {
+    background:
+        linear-gradient(
+            145deg,
+            #17223b,
+            #111c35
+        ) !important;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.16) !important;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* Login/Register labels */
+
+.login-container label,
+.register-container label,
+.auth-container label,
+.login-card label,
+.register-card label,
+.auth-card label {
+    color: #e2e8f0 !important;
+}
+
+
+/* Login/Register inputs */
+
+.login-container input,
+.register-container input,
+.auth-container input,
+.login-card input,
+.register-card input,
+.auth-card input {
+    background: #0f172a !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.25) !important;
+}
+
+.login-container input::placeholder,
+.register-container input::placeholder,
+.auth-container input::placeholder,
+.login-card input::placeholder,
+.register-card input::placeholder,
+.auth-card input::placeholder {
+    color: #64748b !important;
+}
+
+
+/* =========================
+   ALL BUTTONS
+========================= */
+
+.btn,
+.auth-btn,
+.publish-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5
+        ) !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(124, 58, 237, 0.30) !important;
+
+    transition: all 0.25s ease;
+}
+
+.btn:hover,
+.auth-btn:hover,
+.publish-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(124, 58, 237, 0.45) !important;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+    color: #a78bfa;
+}
+
+a:hover {
+    color: #c4b5fd;
+}
+
+
+/* =========================
+   CATEGORY BADGES
+========================= */
+
+.category {
+    background: rgba(
+        124,
+        58,
+        237,
+        0.16
+    ) !important;
+
+    color: #c4b5fd !important;
+
+    border: 1px solid
+        rgba(167, 139, 250, 0.18);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #080f20 !important;
+
+    color: #94a3b8 !important;
+
+    border-top: 1px solid
+        rgba(148, 163, 184, 0.16) !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        background: #0f172a !important;
+    }
+
+    .navbar nav a {
+        color: #cbd5e1 !important;
+    }
+
+    .dashboard,
+    .create-blog-page {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+/* =====================================================
+   BLOGSPHERE SPARKLE EFFECT
+===================================================== */
+
+.sparkle {
+    position: fixed;
+
+    width: 3px;
+    height: 3px;
+
+    background: #c4b5fd;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    opacity: 0;
+
+    box-shadow:
+        0 0 6px #a78bfa,
+        0 0 12px rgba(167, 139, 250, 0.7);
+
+    animation: sparkleTwinkle 3s ease-in-out infinite;
+}
+
+
+@keyframes sparkleTwinkle {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 0.9;
+
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform: scale(0.5);
+    }
+}
+/* Keep application content above sparkles */
+
+.navbar,
+main,
+footer {
+    position: relative;
+
+    z-index: 1;
+}
