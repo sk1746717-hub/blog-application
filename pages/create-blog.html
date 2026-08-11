@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BlogSphere | Create Blog</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            BlogSphere
+        </div>
+
+        <nav>
+
+            <a href="../index.html">Home</a>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="create-blog.html">Create Blog</a>
+
+            <a href="login.html">Logout</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Create Blog -->
+
+    <main class="create-blog-page">
+
+        <div class="create-blog-container">
+
+            <!-- Page Header -->
+
+            <div class="create-blog-header">
+
+                <p class="dashboard-label">
+                    Start Writing
+                </p>
+
+                <h1>
+                    Create New Blog
+                </h1>
+
+                <p>
+                    Share your thoughts and stories with the world.
+                </p>
+
+            </div>
+
+
+            <!-- Blog Form -->
+
+            <form id="createBlogForm" class="blog-form">
+
+                <!-- Blog Title -->
+
+                <div class="form-group">
+
+                    <label for="blogTitle">
+                        Blog Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="blogTitle"
+                        name="title"
+                        placeholder="Enter your blog title"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option value="">
+                            Select a category
+                        </option>
+
+                        <option value="Technology">
+                            Technology
+                        </option>
+
+                        <option value="Programming">
+                            Programming
+                        </option>
+
+                        <option value="Career">
+                            Career
+                        </option>
+
+                        <option value="Education">
+                            Education
+                        </option>
+
+                        <option value="Lifestyle">
+                            Lifestyle
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Blog Content -->
+
+                <div class="form-group">
+
+                    <label for="content">
+                        Blog Content
+                    </label>
+
+                    <textarea
+                        id="content"
+                        name="content"
+                        rows="12"
+                        placeholder="Write your blog content here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Tags -->
+
+                <div class="form-group">
+
+                    <label for="tags">
+                        Tags
+                    </label>
+
+                    <input
+                        type="text"
+                        id="tags"
+                        name="tags"
+                        placeholder="Example: javascript, web development, coding"
+                    >
+
+                    <small class="form-help">
+                        Separate multiple tags with commas.
+                    </small>
+
+                </div>
+
+
+                <!-- Form Actions -->
+
+                <div class="blog-form-actions">
+
+                    <a
+                        href="dashboard.html"
+                        class="cancel-btn"
+                    >
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="auth-btn publish-btn"
+                    >
+                        Publish Blog
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 BlogSphere. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
