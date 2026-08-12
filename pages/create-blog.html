@@ -23,7 +23,7 @@
             BlogSphere
         </div>
 
-        <nav>
+        <nav id="navLinks">
 
             <a href="../index.html">Home</a>
 
@@ -31,7 +31,7 @@
 
             <a href="create-blog.html">Create Blog</a>
 
-            <a href="login.html">Logout</a>
+            <a href="login.html" id="authNavBtn">Logout</a>
 
         </nav>
 
@@ -48,15 +48,15 @@
 
             <div class="create-blog-header">
 
-                <p class="dashboard-label">
+                <p class="dashboard-label" id="formSubHeader">
                     Start Writing
                 </p>
 
-                <h1>
+                <h1 id="createBlogPageTitle">
                     Create New Blog
                 </h1>
 
-                <p>
+                <p id="formDescription">
                     Share your thoughts and stories with the world.
                 </p>
 
@@ -183,6 +183,7 @@
 
                     <button
                         type="submit"
+                        id="publishBtn"
                         class="auth-btn publish-btn"
                     >
                         Publish Blog

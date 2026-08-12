@@ -59,7 +59,24 @@ const createBlog = async (req, res) => {
 // ================================
 const getAllBlogs = async (req, res) => {
     try {
-        const blogs = await Blog.find()
+        const { search, category } = req.query;
+        const query = {};
+
+        if (category && category.trim() && category !== "All") {
+            query.category = { $regex: new RegExp(`^${category.trim()}$`, "i") };
+        }
+
+        if (search && search.trim()) {
+            const escapedSearch = search.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            const searchRegex = new RegExp(escapedSearch, "i");
+            query.$or = [
+                { title: searchRegex },
+                { content: searchRegex },
+                { tags: searchRegex }
+            ];
+        }
+
+        const blogs = await Blog.find(query)
             .sort({ createdAt: -1 })
             .populate("author", "name email role");
 

@@ -23,7 +23,7 @@
             BlogSphere
         </div>
 
-        <nav>
+        <nav id="navLinks">
 
             <a href="../index.html">Home</a>
 
@@ -31,7 +31,7 @@
 
             <a href="create-blog.html">Create Blog</a>
 
-            <a href="login.html">Logout</a>
+            <a href="login.html" id="authNavBtn">Logout</a>
 
         </nav>
 
@@ -48,7 +48,7 @@
 
             <div>
 
-                <p class="dashboard-label">
+                <p class="dashboard-label" id="welcomeUserLabel">
                     Welcome back
                 </p>
 
@@ -90,8 +90,8 @@
                         Total Blogs
                     </p>
 
-                    <h2>
-                        12
+                    <h2 id="statTotalBlogs">
+                        0
                     </h2>
 
                 </div>
@@ -102,17 +102,17 @@
             <div class="stat-card">
 
                 <span class="stat-icon">
-                    👁️
+                    👤
                 </span>
 
                 <div>
 
                     <p>
-                        Total Views
+                        Account Role
                     </p>
 
-                    <h2>
-                        1,248
+                    <h2 id="statUserRole">
+                        User
                     </h2>
 
                 </div>
@@ -123,17 +123,17 @@
             <div class="stat-card">
 
                 <span class="stat-icon">
-                    ❤️
+                    ⭐
                 </span>
 
                 <div>
 
                     <p>
-                        Total Likes
+                        Status
                     </p>
 
                     <h2>
-                        356
+                        Active
                     </h2>
 
                 </div>
@@ -161,91 +161,9 @@
             </div>
 
 
-            <div class="dashboard-blog-container">
+            <div class="dashboard-blog-container" id="dashboardBlogContainer">
 
-
-                <!-- Blog 1 -->
-
-                <article class="dashboard-blog-card">
-
-                    <div class="dashboard-blog-content">
-
-                        <span class="category">
-                            Technology
-                        </span>
-
-                        <h3>
-                            Getting Started With Web Development
-                        </h3>
-
-                        <p>
-                            Learn the fundamentals of modern
-                            web development and start building
-                            amazing websites.
-                        </p>
-
-                        <small>
-                            Published on August 10, 2026
-                        </small>
-
-                    </div>
-
-
-                    <div class="blog-actions">
-
-                        <a href="create-blog.html">
-                            Edit
-                        </a>
-
-                        <button>
-                            Delete
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- Blog 2 -->
-
-                <article class="dashboard-blog-card">
-
-                    <div class="dashboard-blog-content">
-
-                        <span class="category">
-                            Programming
-                        </span>
-
-                        <h3>
-                            Why Learning JavaScript Matters
-                        </h3>
-
-                        <p>
-                            JavaScript helps developers create
-                            interactive and powerful web applications.
-                        </p>
-
-                        <small>
-                            Published on August 8, 2026
-                        </small>
-
-                    </div>
-
-
-                    <div class="blog-actions">
-
-                        <a href="create-blog.html">
-                            Edit
-                        </a>
-
-                        <button>
-                            Delete
-                        </button>
-
-                    </div>
-
-                </article>
-
+                <p style="color: #aab6cc;">Loading your blogs...</p>
 
             </div>
 

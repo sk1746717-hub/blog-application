@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BlogSphere | Blog Details</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .blog-details-page {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .blog-details-card {
+            background: linear-gradient(145deg, rgba(30, 41, 69, 0.95), rgba(23, 34, 59, 0.95));
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .blog-details-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .blog-details-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            background: linear-gradient(90deg, #ffffff, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #aab6cc;
+            font-size: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+        }
+
+        .blog-body-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #cbd5e1;
+            white-space: pre-wrap;
+            margin-bottom: 30px;
+        }
+
+        .blog-tags-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tag-pill {
+            background: rgba(124, 58, 237, 0.12);
+            color: #a78bfa;
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .blog-detail-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(148, 163, 184, 0.16);
+        }
+
+        .edit-action-btn {
+            background: rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .edit-action-btn:hover {
+            background: rgba(124, 58, 237, 0.4);
+            color: #ffffff;
+        }
+
+        .delete-action-btn {
+            background: rgba(220, 38, 38, 0.2);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .delete-action-btn:hover {
+            background: rgba(220, 38, 38, 0.4);
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <div class="logo">
+            BlogSphere
+        </div>
+
+        <nav id="navLinks">
+
+            <a href="../index.html">Home</a>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="create-blog.html">Create Blog</a>
+
+            <a href="login.html" id="authNavBtn">Login</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main Blog Details Container -->
+    <main class="blog-details-page">
+
+        <div id="blogDetailsContainer">
+            <p style="text-align: center; padding: 40px; color: #aab6cc;">Loading blog post...</p>
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 BlogSphere. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

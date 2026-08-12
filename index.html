@@ -11,6 +11,66 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        .filter-section {
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            background: #17223b;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+        }
+
+        .category-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background: rgba(30, 41, 69, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #cbd5e1;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #7c3aed;
+            color: #ffffff;
+            border-color: #7c3aed;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -23,7 +83,7 @@
             BlogSphere
         </div>
 
-        <nav>
+        <nav id="navLinks">
 
             <a href="index.html">Home</a>
 
@@ -51,7 +111,7 @@
                 with our simple blogging platform.
             </p>
 
-            <a href="pages/register.html" class="btn">
+            <a href="pages/register.html" id="heroStartWritingBtn" class="btn">
                 Start Writing
             </a>
 
@@ -65,86 +125,30 @@
     <section class="blogs">
 
         <h2>
-            Latest Blogs
+            Explore Stories & Articles
         </h2>
 
+        <!-- Search & Filter Controls -->
+        <div class="filter-section">
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search blogs by title, content, or tags...">
+            </div>
 
-        <div class="blog-container">
+            <div class="category-filters" id="categoryFilters">
+                <button class="filter-btn active" data-category="All">All</button>
+                <button class="filter-btn" data-category="Technology">Technology</button>
+                <button class="filter-btn" data-category="Programming">Programming</button>
+                <button class="filter-btn" data-category="Career">Career</button>
+                <button class="filter-btn" data-category="Education">Education</button>
+                <button class="filter-btn" data-category="Lifestyle">Lifestyle</button>
+            </div>
 
-
-            <!-- Blog 1 -->
-
-            <article class="blog-card">
-
-                <span class="category">
-                    Technology
-                </span>
-
-                <h3>
-                    Getting Started With Web Development
-                </h3>
-
-                <p>
-                    Learn the fundamentals of modern web
-                    development and start building amazing
-                    websites.
-                </p>
-
-                <a href="#" class="read-more">
-                    Read More →
-                </a>
-
-            </article>
+        </div>
 
 
-            <!-- Blog 2 -->
-
-            <article class="blog-card">
-
-                <span class="category">
-                    Programming
-                </span>
-
-                <h3>
-                    Why Learning JavaScript Matters
-                </h3>
-
-                <p>
-                    JavaScript is one of the most popular
-                    programming languages for web development.
-                </p>
-
-                <a href="#" class="read-more">
-                    Read More →
-                </a>
-
-            </article>
-
-
-            <!-- Blog 3 -->
-
-            <article class="blog-card">
-
-                <span class="category">
-                    Career
-                </span>
-
-                <h3>
-                    Preparing For Your First Developer Job
-                </h3>
-
-                <p>
-                    Practical tips to help you prepare for
-                    your software development career.
-                </p>
-
-                <a href="#" class="read-more">
-                    Read More →
-                </a>
-
-            </article>
-
-
+        <div class="blog-container" id="homeBlogContainer">
+            <p style="text-align: center; grid-column: 1 / -1; color: #aab6cc;">Loading blogs...</p>
         </div>
 
     </section>
