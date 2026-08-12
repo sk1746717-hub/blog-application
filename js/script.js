@@ -2,7 +2,7 @@
 // BlogSphere Module 5 Complete Script
 // =====================================================
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "/api";
 
 // Helper for page path resolution
 const isInPagesDir = window.location.pathname.includes("/pages/");
