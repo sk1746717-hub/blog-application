@@ -2,7 +2,7 @@
 // BlogSphere Module 5 Complete Script
 // =====================================================
 
-const API_BASE = "/api";
+const API_BASE = "https://blog-application-in5o.onrender.com/api";
 
 // Helper for page path resolution
 const isInPagesDir = window.location.pathname.includes("/pages/");
