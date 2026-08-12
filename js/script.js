@@ -1,5 +1,5 @@
 // =====================================================
-// BlogSphere Module 4 Frontend Script
+// BlogSphere Module 5 Complete Script
 // =====================================================
 
 const API_BASE = "http://localhost:5000/api";
@@ -59,7 +59,7 @@ const updateNavbar = () => {
             <a href="${getHomePath()}">Home</a>
             <a href="${getPagePath("dashboard.html")}">Dashboard</a>
             <a href="${getPagePath("create-blog.html")}">Create Blog</a>
-            <a href="#" id="logoutBtn" style="color: #fca5a5;">Logout (${user?.name || "User"})</a>
+            <a href="#" id="logoutBtn" style="color: #fca5a5;">Logout (${escapeHtml(user?.name || "User")})</a>
         `;
 
         const logoutBtn = document.getElementById("logoutBtn");
@@ -86,7 +86,7 @@ const updateNavbar = () => {
 };
 
 // =====================================================
-// AUTH HANDLERS
+// AUTH HANDLERS (Login & Register)
 // =====================================================
 
 const initAuthForms = () => {
@@ -263,40 +263,58 @@ const initHomePage = () => {
 };
 
 // =====================================================
-// DASHBOARD PAGE
+// DASHBOARD PAGE (Protected Private Route & Profile)
 // =====================================================
 
 const initDashboardPage = () => {
     const dashboardBlogContainer = document.getElementById("dashboardBlogContainer");
     if (!dashboardBlogContainer) return;
 
+    // Authentication Guard
     const token = getToken();
     if (!token) {
-        alert("You must be logged in to view your dashboard.");
+        alert("Authentication required. Please log in to access your dashboard.");
         window.location.href = getPagePath("login.html");
         return;
     }
 
-    // Fetch user profile and blogs
+    // Fetch user profile and user-specific blogs
     const loadDashboardData = async () => {
         try {
-            // Profile
+            // 1. User Profile API
             const profileRes = await fetch(`${API_BASE}/auth/profile`, {
                 headers: { "Authorization": `Bearer ${token}` }
             });
+
+            if (profileRes.status === 401) {
+                clearAuth();
+                alert("Session expired or invalid token. Please log in again.");
+                window.location.href = getPagePath("login.html");
+                return;
+            }
+
             if (profileRes.ok) {
                 const userProfile = await profileRes.json();
                 setUser(userProfile);
                 const welcomeLabel = document.getElementById("welcomeUserLabel");
                 if (welcomeLabel) welcomeLabel.textContent = `Welcome back, ${userProfile.name || ""}`;
+                const profileDesc = document.getElementById("userProfileInfo");
+                if (profileDesc) profileDesc.textContent = `Email: ${userProfile.email || ""} | Role: ${userProfile.role || "User"} | Status: Active`;
                 const roleEl = document.getElementById("statUserRole");
                 if (roleEl) roleEl.textContent = userProfile.role || "User";
             }
 
-            // My Blogs
+            // 2. User-Specific Blogs API (GET /api/blogs/my)
             const blogsRes = await fetch(`${API_BASE}/blogs/my`, {
                 headers: { "Authorization": `Bearer ${token}` }
             });
+
+            if (blogsRes.status === 401) {
+                clearAuth();
+                alert("Session expired or invalid token. Please log in again.");
+                window.location.href = getPagePath("login.html");
+                return;
+            }
 
             const blogs = await blogsRes.json();
 
@@ -352,6 +370,14 @@ const initDashboardPage = () => {
                                 method: "DELETE",
                                 headers: { "Authorization": `Bearer ${token}` }
                             });
+
+                            if (delRes.status === 401) {
+                                clearAuth();
+                                alert("Session expired. Please log in again.");
+                                window.location.href = getPagePath("login.html");
+                                return;
+                            }
+
                             const delData = await delRes.json();
 
                             if (delRes.ok) {
@@ -385,9 +411,10 @@ const initCreateBlogPage = () => {
     const createBlogForm = document.getElementById("createBlogForm");
     if (!createBlogForm) return;
 
+    // Authentication Guard
     const token = getToken();
     if (!token) {
-        alert("You must be logged in to create or edit blogs.");
+        alert("Authentication required. Please log in to create or edit blogs.");
         window.location.href = getPagePath("login.html");
         return;
     }
@@ -443,6 +470,13 @@ const initCreateBlogPage = () => {
                 },
                 body: JSON.stringify({ title, category, content, tags })
             });
+
+            if (res.status === 401) {
+                clearAuth();
+                alert("Session expired. Please log in again.");
+                window.location.href = getPagePath("login.html");
+                return;
+            }
 
             const data = await res.json();
 
@@ -534,6 +568,14 @@ const initBlogDetailsPage = () => {
                                     method: "DELETE",
                                     headers: { "Authorization": `Bearer ${getToken()}` }
                                 });
+
+                                if (delRes.status === 401) {
+                                    clearAuth();
+                                    alert("Session expired. Please log in again.");
+                                    window.location.href = getPagePath("login.html");
+                                    return;
+                                }
+
                                 const delData = await delRes.json();
                                 if (delRes.ok) {
                                     alert("Blog deleted successfully!");
@@ -578,4 +620,4 @@ document.addEventListener("DOMContentLoaded", () => {
     initBlogDetailsPage();
 });
 
-console.log("BlogSphere Module 4 loaded successfully!");
+console.log("BlogSphere Module 5 loaded successfully!");
